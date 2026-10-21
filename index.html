@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电竞护航陪玩接单系统_游戏陪玩小程序开发_工作室订单管理 - 买断制贴牌部署</title>
+<meta name="description" content="面向游戏陪玩/代练/护航工作室的订单交易小程序:多规格下单、微信支付+余额、打手接单大厅、阶梯分成、数据看板。买断制·贴牌部署·专人售后,交付快至当天。合作联系:wo812570284">
+<meta name="keywords" content="电竞护航系统,陪玩小程序,陪玩接单系统,游戏陪玩小程序开发,代练工作室管理系统,护航下单平台,陪玩小程序源码,电竞订单系统">
+<meta property="og:title" content="电竞护航陪玩接单系统 · 工作室专属订单交易平台">
+<meta property="og:description" content="微信群派单、Excel对账的时代该结束了。买断制贴牌部署,你的品牌你的小程序,打手端+老板端+管理后台一套齐活。合作联系:wo812570284">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#070b14; --panel:#0e1526; --panel2:#111b30; --line:#1e2a45;
+  --txt:#e6ecf7; --sub:#8fa0bd; --acc:#6d7cff; --acc2:#2dd4bf; --pink:#f472b6;
+  --grad:linear-gradient(120deg,#6d7cff,#2dd4bf);
+  --grad2:linear-gradient(120deg,#818cf8,#22d3ee);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img,svg{vertical-align:middle}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.kicker{display:inline-block;font-size:13px;letter-spacing:2px;color:var(--acc2);border:1px solid rgba(45,212,191,.35);border-radius:999px;padding:4px 14px;margin-bottom:14px}
+h2{font-size:30px;margin-bottom:10px;background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--sub);max-width:640px}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:1.1fr .9fr;align-items:center}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(109,124,255,.5)}
+.card h3{font-size:18px;margin:12px 0 8px}
+.card p{color:var(--sub);font-size:14.5px}
+.ico{width:44px;height:44px;border-radius:12px;background:rgba(109,124,255,.14);display:flex;align-items:center;justify-content:center}
+.ico svg{width:24px;height:24px;stroke:var(--acc2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(7,11,20,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:18px}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav .cta{font-size:14px;background:var(--grad);color:#081018;font-weight:700;padding:9px 18px;border-radius:999px}
+/* hero */
+.hero{position:relative;padding:96px 0 72px;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40%;background:
+ radial-gradient(40% 40% at 20% 30%,rgba(109,124,255,.22),transparent 60%),
+ radial-gradient(35% 35% at 80% 25%,rgba(45,212,191,.16),transparent 60%),
+ radial-gradient(45% 45% at 55% 85%,rgba(244,114,182,.10),transparent 60%);pointer-events:none}
+.hero h1{position:relative;font-size:44px;line-height:1.25;margin:18px 0 14px}
+.hero h1 b{background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin:0 auto 30px;font-size:17px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn{padding:14px 30px;border-radius:999px;font-weight:700;font-size:16px}
+.btn.primary{background:var(--grad);color:#081018}
+.btn.ghost{border:1px solid var(--line);color:var(--txt)}
+.stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:46px;position:relative}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 28px;min-width:170px}
+.stat b{display:block;font-size:26px;background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:13px;color:var(--sub)}
+/* phone */
+.phone{width:290px;height:590px;border-radius:40px;background:#0b1020;border:8px solid #1b2540;box-shadow:0 30px 80px rgba(109,124,255,.25),inset 0 0 0 2px #0a0f1e;margin:0 auto;position:relative;overflow:hidden}
+.phone::before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);width:96px;height:22px;background:#0a0f1e;border-radius:999px;z-index:3}
+.scr{position:absolute;inset:0;padding:46px 14px 14px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,#0b1226,#0a0f1e)}
+.scr .bar{font-size:15px;font-weight:800;text-align:center;color:#cfe0ff}
+.scr .search{height:34px;border-radius:10px;background:#101a30;border:1px solid #1c2946;font-size:12px;color:#5f739a;display:flex;align-items:center;padding:0 12px}
+.pcard{display:flex;gap:10px;align-items:center;background:#101a30;border:1px solid #1c2946;border-radius:12px;padding:10px}
+.pcard .av{width:40px;height:40px;border-radius:50%;flex:none;background:var(--grad)}
+.pcard .av.v2{background:linear-gradient(120deg,#f472b6,#818cf8)}
+.pcard .av.v3{background:linear-gradient(120deg,#22d3ee,#6d7cff)}
+.pcard .nm{font-size:13px;font-weight:700}
+.pcard .tg{font-size:10.5px;color:#5f739a}
+.pcard .pr{margin-left:auto;font-size:13px;font-weight:800;color:#22d3ee}
+.tabbar{margin-top:auto;display:flex;justify-content:space-around;padding:10px 0 6px;border-top:1px solid #1c2946;font-size:10.5px;color:#5f739a}
+.tabbar i{display:block;width:18px;height:18px;border-radius:6px;background:#1c2946;margin:0 auto 3px}
+.tabbar .on{color:#22d3ee}.tabbar .on i{background:var(--grad)}
+.feature-li{display:grid;gap:14px}
+.feature-li .card{display:flex;gap:14px;align-items:flex-start;padding:18px 20px}
+.feature-li h3{margin:0 0 4px;font-size:16px}
+/* steps */
+.steps{counter-reset:s}
+.step{position:relative;padding:26px}
+.step::before{counter-increment:s;content:"0" counter(s);font-size:34px;font-weight:900;color:transparent;-webkit-text-stroke:1px rgba(45,212,191,.5)}
+/* price */
+.price{display:flex;flex-direction:column;text-align:center;position:relative}
+.price .tag{position:absolute;top:-12px;right:18px;background:var(--grad);color:#081018;font-size:12px;font-weight:800;padding:3px 12px;border-radius:999px}
+.price em{font-style:normal;font-size:38px;font-weight:900;background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.price em small{font-size:14px;color:var(--sub);-webkit-text-fill-color:var(--sub)}
+.price ul{list-style:none;text-align:left;margin:16px 0 20px;flex:1}
+.price li{font-size:14px;color:var(--sub);padding:6px 0;border-bottom:1px dashed rgba(30,42,69,.8)}
+.price li::before{content:"✓";color:var(--acc2);margin-right:8px;font-weight:800}
+.price.hot{border-color:rgba(109,124,255,.65);box-shadow:0 0 50px rgba(109,124,255,.18)}
+.price .btn{width:100%;text-align:center}
+/* faq */
+details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;list-style:none}
+summary::after{content:"+";float:right;color:var(--acc2);font-size:20px}
+details[open] summary::after{content:"−"}
+details p{color:var(--sub);font-size:14.5px;margin-top:10px}
+/* contact */
+.contact{text-align:center;background:
+ radial-gradient(50% 60% at 50% 0%,rgba(109,124,255,.16),transparent 70%),var(--panel);
+ border:1px solid var(--line);border-radius:24px;padding:56px 24px}
+.contact .wx{display:inline-flex;align-items:center;gap:14px;background:#0b1226;border:2px solid var(--acc2);border-radius:16px;padding:18px 34px;margin:22px 0 10px}
+.contact .wx b{font-size:30px;letter-spacing:1px;color:var(--acc2)}
+.contact p{color:var(--sub);font-size:14px}
+.fab{position:fixed;right:18px;bottom:22px;z-index:60;background:var(--grad);color:#081018;font-weight:800;padding:13px 22px;border-radius:999px;box-shadow:0 10px 30px rgba(45,212,191,.35);font-size:15px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:#57688a;font-size:13px;text-align:center}
+@media(max-width:860px){
+ .g3,.g2{grid-template-columns:1fr}
+ .hero h1{font-size:30px}
+ section{padding:52px 0}
+ .phone{width:250px;height:500px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">护航<b>Pro</b>·接单系统</div>
+    <a class="cta" href="#contact">咨询报价</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">2026 · 三角洲护航大热门 · 工作室接单必备</span>
+    <h1>你的工作室,该有一套<br><b>自己的陪玩接单小程序</b></h1>
+    <p class="lead">微信群派单、Excel 对账、收款靠转账截图的日子该结束了。买断制 · 贴牌部署:<b>你的品牌、你的小程序、你的数据</b>,老板端 + 打手端 + 管理后台,一套齐活。</p>
+    <div class="btns">
+      <a class="btn primary" href="#contact">获取报价与演示</a>
+      <a class="btn ghost" href="#price">查看版本价格</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>140亿+</b><span>游戏陪玩市场规模</span></div>
+      <div class="stat"><b>32%+</b><span>行业年增速</span></div>
+      <div class="stat"><b>297万</b><span>头部平台认证陪练</span></div>
+      <div class="stat"><b>0.5天</b><span>最快贴牌交付</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="pain">
+  <div class="wrap">
+    <span class="kicker">是不是你</span>
+    <h2>工作室老板的三个深夜崩溃瞬间</h2>
+    <p class="lead">系统解决不了你所有的运营问题,但这三件事,它当场解决。</p>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-1L3 20l1-5.5a8.5 8.5 0 1 1 17-3z"/></svg></div><h3>派单全靠群里吼</h3><p>「谁在线?这单谁来?」——每天在群里@到深夜。上线接单大厅后,打手自己抢单,你只看结果。</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div><h3>月底对账翻聊天记录</h3><p>谁的款收了没收、给打手结了多少,全在聊天记录里考古。系统每笔订单自动记账,流水一屏拉清。</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>打手带着客户飞单</h3><p>余额充值锁客、阶梯分成留人、信誉等级绑人、违规扣佣立威——四道缰绳,让留在平台上更划算。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="show">
+  <div class="wrap">
+    <div class="grid g2">
+      <div class="phone" role="img" aria-label="接单大厅界面示意">
+        <div class="scr">
+          <div class="bar">接单大厅</div>
+          <div class="search">🔍 搜索游戏 / 段位 / 价格</div>
+          <div class="pcard"><div class="av"></div><div><div class="nm">夜雨*声</div><div class="tg">三角洲 · 绝密护航 · 双排</div></div><div class="pr">¥60/h</div></div>
+          <div class="pcard"><div class="av v2"></div><div><div class="nm">北岛*</i>白</div><div class="tg">王者荣耀 · 巅峰赛 · 技术陪</div></div><div class="pr">¥35/局</div></div>
+          <div class="pcard"><div class="av v3"></div><div><div class="nm">今天*睡觉</div><div class="tg">无畏契约 · 上分 · 陪玩</div></div><div class="pr">¥40/h</div></div>
+          <div class="tabbar"><div class="on"><i></i>首页</div><div><i></i>大厅</div><div><i></i>订单</div><div><i></i>我的</div></div>
+        </div>
+      </div>
+      <div>
+        <span class="kicker">产品一览</span>
+        <h2>一个小程序,两种身份</h2>
+        <p class="lead">老板下单、打手接单,同一小程序身份切换;你的品牌贴在每一个页面上。</p>
+        <div class="feature-li" style="margin-top:22px">
+          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.6 11.5a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20 8H6"/></svg></div><div><h3>多规格商品下单</h3><p>按小时 / 按局 / 按段位 / 结果单 / 保底套餐,护航价目随意配。</p></div></div>
+          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 7h18v12H3z"/><path d="M3 11h18"/></svg></div><div><h3>微信支付 + 余额</h3><p>钱直接进你自己的商户号;老客户充值余额复购,资金池锁客。</p></div></div>
+          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><div><h3>打手接单大厅</h3><p>打手提交段位战绩,你后台审核上架;上线抢单、收入明细、提现申请自助完成。</p></div></div>
+          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div><h3>数据看板</h3><p>日流水、打手佣金排行、退款率,月底对账从三小时变成三分钟。</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="flow" style="background:linear-gradient(180deg,transparent,rgba(109,124,255,.05),transparent)">
+  <div class="wrap">
+    <span class="kicker">交付流程</span>
+    <h2>从付款到上线,最快当天</h2>
+    <div class="grid g3 steps" style="margin-top:26px">
+      <div class="card step"><h3>确定版本</h3><p>按工作室规模选基础 / 标准 / 旗舰版,微信沟通确认功能与价格。</p></div>
+      <div class="card step"><h3>贴牌构建</h3><p>发我们品牌名、logo、主题色、价目表,构建你的专属小程序并提交审核。</p></div>
+      <div class="card step"><h3>上线运营</h3><p>审核通过即可开张;后台配打手、审资质、看流水,全程有教程和售后。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="price">
+  <div class="wrap">
+    <span class="kicker">一次买断 · 无抽成</span>
+    <h2>版本与价格</h2>
+    <p class="lead">买断制,交易流水 0 抽成;次年起托管服务费 800~1,500 元/年。</p>
+    <div class="grid g3" style="margin-top:30px">
+      <div class="price card">
+        <h3>基础版</h3><em>¥2,980</em>
+        <ul>
+          <li>陪玩下单全流程(多规格)</li><li>微信支付 + 余额</li>
+          <li>订单管理 + 退款仲裁</li><li>贴牌部署 + 首年托管</li>
+        </ul>
+        <a class="btn ghost" href="#contact">咨询</a>
+      </div>
+      <div class="price card hot">
+        <span class="tag">工作室首选</span>
+        <h3>标准版</h3><em>¥5,880</em>
+        <ul>
+          <li>基础版全部功能</li><li>打手入驻 + 接单大厅</li>
+          <li>阶梯分成 + 信誉等级</li><li>数据看板 + 评价体系</li>
+        </ul>
+        <a class="btn primary" href="#contact">咨询</a>
+      </div>
+      <div class="price card">
+        <h3>旗舰版</h3><em>¥9,880</em>
+        <ul>
+          <li>标准版全部功能</li><li>组局 / 车队拼单模式</li>
+          <li>分销裂变 + 优惠券</li><li>优先定制额度</li>
+        </ul>
+        <a class="btn ghost" href="#contact">咨询</a>
+      </div>
+    </div>
+    <p style="text-align:center;color:#57688a;font-size:13px;margin-top:18px">另有数据完全自持的「私有部署」方案(¥15,000 起),详情咨询。</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <span class="kicker">常见问题</span>
+    <h2>老板们最关心的五件事</h2>
+    <div style="margin-top:24px">
+      <details open><summary>需要什么资质?个人能做吗?</summary><p>需要营业执照(个体工商户或公司均可)——因为微信支付必须商户主体,这也是对你客户的保障。还没执照的,先办照再来,一般 3~5 个工作日。</p></details>
+      <details><summary>打手和客户加了微信,私下交易飞单怎么办?</summary><p>任何平台都防不住 100% 飞单,但系统给你四道缰绳:余额充值锁客、阶梯分成让打手接得越多赚得越多、信誉等级是他接单的简历、违规可封号扣未结佣金。实际经营中,平台喂单的打手,飞单动机远小于你以为的。</p></details>
+      <details><summary>数据安全吗?会不会哪天系统没了?</summary><p>数据存在你的独立租户空间,可随时导出;买断制下你拥有使用权,不是租个账号。也可以选择数据完全自持的私有部署方案。</p></details>
+      <details><summary>上架审核、年审这些麻烦事谁管?</summary><p>我们代部署、协助过审、每年协助年审,类目怎么选、哪些词不能碰,踩过的坑都替你踩完了。这也是年服务费的价值:你不只是买了代码,是买了有人管。</p></details>
+      <details><summary>后续想加功能怎么办?</summary><p>标准/旗舰版自带持续更新;组局车队、分销裂变、分账等模块可单独加购,也接个性化定制。</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <span class="kicker">限时</span>
+      <h2>首批合作工作室,半价换真实案例</h2>
+      <p style="max-width:560px;margin:10px auto 0">前 10 名签约客户享受 5 折优惠,仅需授权我们展示部署案例。名额有限,先到先得。</p>
+      <div class="wx">微信 / QQ:<b>wo812570284</b></div>
+      <p>添加请备注「合作」,可直接索要演示小程序与完整功能清单</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<a class="fab" href="#contact">💬 合作咨询</a>
+
+<footer>
+  <div class="wrap">电竞护航陪玩接单系统 · 面向游戏工作室的订单交易平台 · 本页由 GitHub Pages 托管</footer>
+</footer>
+
+</body>
+</html>
