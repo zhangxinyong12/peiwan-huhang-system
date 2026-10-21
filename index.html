@@ -26,28 +26,33 @@ section{padding:88px 0;border-top:1px solid var(--line)}
 section:first-of-type{border-top:none}
 h2{font-size:26px;font-weight:700;letter-spacing:-.01em;margin:10px 0 6px}
 .lead{color:var(--sub);max-width:560px}
-/* nav */
-nav{border-bottom:1px solid var(--line)}
+/* nav (dark, sits on hero) */
+nav{position:sticky;top:0;z-index:50;background:rgba(13,16,13,.78);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
 nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
-.wm{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.04em}
-.wm i{font-style:normal;color:var(--amber)}
-nav a.ct{font-family:var(--mono);font-size:13px;color:var(--sub)}
-nav a.ct:hover{color:var(--ink)}
-/* hero */
-.hero{padding:110px 0 90px;border-top:none}
-h1{font-size:clamp(34px,6vw,54px);line-height:1.16;font-weight:800;letter-spacing:-.02em;margin:18px 0 20px}
-.hero .lead{font-size:16.5px;margin-bottom:34px}
+.wm{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.04em;color:#fff}
+.wm i{font-style:normal;color:#e8a33d}
+nav a.ct{font-family:var(--mono);font-size:13px;color:rgba(255,255,255,.62)}
+nav a.ct:hover{color:#fff}
+/* hero — dark tactical band */
+.hero{position:relative;overflow:hidden;padding:104px 0 80px;border-top:none;background:linear-gradient(180deg,#0d100d 0%,#141811 70%,#171b13 100%)}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;z-index:1}
+.hero .label{color:rgba(255,255,255,.42)}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.16;font-weight:800;letter-spacing:-.02em;margin:18px 0 20px;color:#fff}
+.hero .lead{font-size:16.5px;margin-bottom:30px;color:rgba(255,255,255,.62)}
 .btns{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 26px;border-radius:8px;font-size:15px;font-weight:600}
-.btn.dark{background:var(--ink);color:#fff}
-.btn.dark:hover{background:#000}
-.btn.line{border:1px solid var(--line);color:var(--ink)}
-.btn.line:hover{border-color:var(--faint)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:64px;border-top:1px solid var(--line)}
-.stat{padding:20px 18px 4px;border-left:1px solid var(--line)}
+.btn.amber{background:#e8a33d;color:#181405}
+.btn.amber:hover{background:#f0b04f}
+.btn.ghostw{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btn.ghostw:hover{border-color:rgba(255,255,255,.6)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.chip{font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px 13px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1px solid rgba(255,255,255,.14)}
+.stat{padding:20px 18px 4px;border-left:1px solid rgba(255,255,255,.14)}
 .stat:first-child{border-left:none;padding-left:0}
-.stat b{display:block;font-family:var(--mono);font-size:22px;font-weight:700}
-.stat span{font-size:12.5px;color:var(--sub)}
+.stat b{display:block;font-family:var(--mono);font-size:22px;font-weight:700;color:#fff}
+.stat span{font-size:12.5px;color:rgba(255,255,255,.5)}
 /* pain */
 .pain{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:44px}
 .pain .n{font-family:var(--mono);font-size:12px;color:var(--faint)}
@@ -133,13 +138,55 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 </nav>
 
 <header class="hero">
+  <svg class="bg" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+        <path d="M28 0H0V28" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
+      </pattern>
+      <pattern id="ticks" width="140" height="140" patternUnits="userSpaceOnUse">
+        <path d="M70 64v12M64 70h12" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
+      </pattern>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="rgba(232,163,61,.14)"/>
+        <stop offset="100%" stop-color="rgba(232,163,61,0)"/>
+      </radialGradient>
+    </defs>
+    <rect width="1440" height="640" fill="url(#grid)"/>
+    <rect width="1440" height="640" fill="url(#ticks)"/>
+    <circle cx="1150" cy="150" r="300" fill="url(#glow)"/>
+    <g fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1">
+      <path d="M-40 540 C 180 430, 340 580, 580 480 S 920 320, 1140 430 S 1360 530, 1520 440"/>
+      <path d="M-40 574 C 190 468, 350 612, 590 514 S 930 356, 1150 462 S 1370 560, 1520 474"/>
+      <path d="M-40 608 C 200 506, 360 644, 600 548 S 940 392, 1160 494 S 1380 590, 1520 508"/>
+      <path d="M-60 140 C 140 220, 260 90, 470 160 S 760 250, 940 170"/>
+      <path d="M-60 180 C 150 256, 270 128, 480 196 S 770 284, 950 206"/>
+    </g>
+    <g fill="none" stroke="rgba(232,163,61,.28)" stroke-width="1">
+      <circle cx="1160" cy="170" r="118"/>
+      <circle cx="1160" cy="170" r="74"/>
+      <path d="M1160 30v44M1160 266v44M1020 170h44M1256 170h44"/>
+    </g>
+    <g fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1">
+      <rect x="330" y="210" width="10" height="10" transform="rotate(45 335 215)"/>
+      <rect x="760" y="120" width="10" height="10" transform="rotate(45 765 125)"/>
+      <path d="M520 330v20M510 340h20"/>
+    </g>
+    <g font-family="ui-monospace,Consolas,monospace" font-size="11" letter-spacing="2" fill="rgba(255,255,255,.24)">
+      <text x="24" y="618">GRID 38.92N 121.36E // SECTOR 04 // LZ-BRAVO</text>
+      <text x="1416" y="40" text-anchor="end">ALT 240M · WIND 3M/S</text>
+      <text x="1160" y="176" text-anchor="middle" fill="rgba(232,163,61,.5)">OBJ-01</text>
+    </g>
+  </svg>
   <div class="wrap">
     <span class="label">01 · 面向游戏陪玩 / 护航 / 代练工作室</span>
     <h1>别再用微信群派单了。</h1>
     <p class="lead">一套接单小程序:老板下单、打手抢单、后台对账,各干各的。买断制,贴你的牌,交易流水零抽成。</p>
     <div class="btns">
-      <a class="btn dark" href="#contact">咨询报价</a>
-      <a class="btn line" href="#feats">先看功能</a>
+      <a class="btn amber" href="#contact">咨询报价</a>
+      <a class="btn ghostw" href="#feats">先看功能</a>
+    </div>
+    <div class="chips">
+      <span class="chip">三角洲行动</span><span class="chip">暗区突围</span><span class="chip">王者荣耀</span><span class="chip">无畏契约</span><span class="chip">CS2</span><span class="chip">和平精英</span><span class="chip">英雄联盟</span><span class="chip">游戏随心配</span>
     </div>
     <div class="stats">
       <div class="stat"><b>¥140亿</b><span>2021 年陪玩市场规模</span></div>
