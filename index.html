@@ -7,192 +7,191 @@
 <meta name="description" content="面向游戏陪玩/代练/护航工作室的接单小程序:多规格下单、微信支付+余额、打手接单大厅、阶梯分成、数据看板。买断制,贴牌部署,合作联系:wo812570284">
 <meta name="keywords" content="电竞护航系统,陪玩小程序,陪玩接单系统,游戏陪玩小程序开发,代练工作室管理系统,护航下单平台,陪玩小程序源码,电竞订单系统">
 <meta property="og:title" content="电竞护航陪玩接单系统 · 工作室专属订单交易平台">
-<meta property="og:description" content="一套给陪玩/护航/代练工作室的接单小程序。买断制,贴你的牌,带管理后台。合作联系:wo812570284">
+<meta property="og:description" content="微信群派单、Excel 对账、收款靠转账截图的日子该结束了。买断制,贴你的牌,老板端 + 打手端 + 管理后台一套齐活。合作联系:wo812570284">
 <meta property="og:type" content="website">
 <style>
 :root{
-  --ink:#e9edf2; --sub:rgba(233,238,244,.62); --faint:rgba(233,238,244,.38);
-  --line:rgba(255,255,255,.09); --amber:#e8a33d; --green:#34d399;
+  --bg:#0a0e1a; --panel:#0e1526; --line:#1e2a45; --txt:#e6ecf7; --sub:#8fa0bd;
+  --acc:#6d7cff; --acc2:#2dd4bf;
+  --grad:linear-gradient(120deg,#6d7cff,#2dd4bf);
+  --grad2:linear-gradient(120deg,#818cf8,#22d3ee);
   --mono:ui-monospace,"SF Mono","Cascadia Mono",Consolas,"Courier New",monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:#0b0e0b;color:var(--ink);font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:15px;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:rgba(232,163,61,.35)}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:880px;margin:0 auto;padding:0 22px}
-.mono{font-family:var(--mono)}
-.label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase}
-section{padding:88px 0;border-top:1px solid var(--line)}
-section:first-of-type{border-top:none}
-h2{font-size:26px;font-weight:700;letter-spacing:-.01em;margin:10px 0 6px}
-.lead{color:var(--sub);max-width:560px}
-/* nav (dark, sits on hero) */
-nav{position:sticky;top:0;z-index:50;background:rgba(13,16,13,.78);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
-nav .wrap{display:flex;justify-content:space-between;align-items:center;height:58px}
-.wm{font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.04em;color:#fff}
-.wm i{font-style:normal;color:#e8a33d}
-nav a.ct{font-family:var(--mono);font-size:13px;color:rgba(255,255,255,.62)}
-nav a.ct:hover{color:#fff}
-/* hero — fixed tactical backdrop behind the whole page */
-.hero{position:relative;display:flex;align-items:center;min-height:100vh;min-height:100svh;padding:90px 0 56px;border-top:none}
-.hero .bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
-.hero .wrap{position:relative;z-index:1;width:100%}
-.hero .label{color:rgba(255,255,255,.42)}
-h1{font-size:clamp(34px,6vw,54px);line-height:1.16;font-weight:800;letter-spacing:-.02em;margin:18px 0 20px;color:#fff}
-.hero .lead{font-size:16.5px;margin-bottom:30px;color:rgba(255,255,255,.62)}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 26px;border-radius:8px;font-size:15px;font-weight:600}
-.btn.amber{background:#e8a33d;color:#181405}
-.btn.amber:hover{background:#f0b04f}
-.btn.ghostw{border:1px solid rgba(255,255,255,.3);color:#fff}
-.btn.ghostw:hover{border-color:rgba(255,255,255,.6)}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
-.chip{font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:4px 13px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:56px;border-top:1px solid rgba(255,255,255,.14)}
-.stat{padding:20px 18px 4px;border-left:1px solid rgba(255,255,255,.14)}
-.stat:first-child{border-left:none;padding-left:0}
-.stat b{display:block;font-family:var(--mono);font-size:22px;font-weight:700;color:#fff}
-.stat span{font-size:12.5px;color:rgba(255,255,255,.5)}
-/* pain */
-.pain{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:44px}
-.pain .n{font-family:var(--mono);font-size:12px;color:var(--faint)}
-.pain h3{font-size:17px;margin:8px 0 6px;font-weight:700}
-.pain p{color:var(--sub);font-size:14px}
+::selection{background:rgba(109,124,255,.4)}
+.bgfix{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.kicker{display:inline-block;font-size:13px;letter-spacing:2px;color:var(--acc2);border:1px solid rgba(45,212,191,.35);border-radius:999px;padding:4px 14px;margin-bottom:14px}
+h2{font-size:30px;margin-bottom:10px;background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--sub);max-width:640px}
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:1.1fr .9fr;align-items:center}
+.card{background:rgba(14,21,38,.82);border:1px solid var(--line);border-radius:16px;padding:26px;transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(109,124,255,.5)}
+.card h3{font-size:18px;margin:12px 0 8px}
+.card p{color:var(--sub);font-size:14.5px}
+.ico{width:44px;height:44px;border-radius:12px;background:rgba(109,124,255,.14);display:flex;align-items:center;justify-content:center}
+.ico svg{width:24px;height:24px;stroke:var(--acc2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(10,14,26,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:800;font-size:18px}
+.logo b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav .cta{font-size:14px;background:var(--grad);color:#081018;font-weight:700;padding:9px 18px;border-radius:999px}
+/* hero */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:90px 0 70px;text-align:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40%;background:
+ radial-gradient(40% 40% at 20% 30%,rgba(109,124,255,.20),transparent 60%),
+ radial-gradient(35% 35% at 80% 25%,rgba(45,212,191,.14),transparent 60%),
+ radial-gradient(45% 45% at 55% 85%,rgba(244,114,182,.08),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative;width:100%}
+.hero h1{font-size:clamp(34px,5.5vw,52px);line-height:1.22;margin:18px auto 16px;max-width:820px}
+.hero h1 b{background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin:0 auto 30px;font-size:16.5px}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:14px 30px;border-radius:999px;font-size:16px;font-weight:700}
+.btn.primary{background:var(--grad);color:#081018}
+.btn.primary:hover{filter:brightness(1.1)}
+.btn.ghost{border:1px solid var(--line);color:var(--txt)}
+.btn.ghost:hover{border-color:var(--acc)}
+.chips{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.chip{font-family:var(--mono);font-size:12px;color:rgba(45,212,191,.85);border:1px solid rgba(45,212,191,.28);border-radius:999px;padding:5px 14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:52px}
+.stat{background:rgba(14,21,38,.82);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.stat b{display:block;font-size:26px;background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:13px;color:var(--sub)}
 /* show */
-.show{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:start}
-/* phone mock — light */
-.phone{width:270px;height:552px;margin:0 auto;border-radius:34px;border:1px solid rgba(255,255,255,.16);background:#fff;box-shadow:0 24px 70px rgba(0,0,0,.5);position:relative;overflow:hidden}
-.phone::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:84px;height:20px;background:#16181d;border-radius:999px;z-index:3;opacity:.9}
-.scr{position:absolute;inset:0;padding:44px 13px 12px;display:flex;flex-direction:column;gap:9px;background:#fff;color:#16181d}
+.show{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:center}
+/* phone */
+.phone{width:280px;height:574px;margin:0 auto;border-radius:38px;border:8px solid #1b2540;background:#0b1020;box-shadow:0 30px 80px rgba(45,212,191,.14),0 0 0 1px #0a0f1e;position:relative;overflow:hidden}
+.phone::before{content:"";position:absolute;top:11px;left:50%;transform:translateX(-50%);width:92px;height:22px;background:#0a0f1e;border-radius:999px;z-index:3}
+.scr{position:absolute;inset:0;padding:46px 14px 14px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,#0b1226,#0a0f1e)}
 .scr .hd{display:flex;justify-content:space-between;align-items:baseline;padding:0 2px}
-.scr .hd b{font-size:15px}
-.scr .hd span{font-family:var(--mono);font-size:10px;color:var(--green)}
-.scr .search{height:30px;border-radius:8px;background:#f4f3ef;border:1px solid var(--line);font-size:11px;color:var(--faint);display:flex;align-items:center;padding:0 10px}
-.row{display:flex;gap:9px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:9px 10px}
-.row .av{width:34px;height:34px;border-radius:50%;background:#eceae4;color:#8a8577;font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center;flex:none}
-.row .nm{font-size:12.5px;font-weight:700;line-height:1.3}
-.row .tg{font-size:10px;color:#8a8577}
-.row .pr{margin-left:auto;font-family:var(--mono);font-size:12px;font-weight:700;color:#16181d}
-.tabs{margin-top:auto;display:flex;justify-content:space-around;border-top:1px solid var(--line);padding:8px 0 4px;font-size:9.5px;color:rgba(22,24,29,.45)}
-.tabs b{color:var(--ink)}
-.note{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:14px;text-align:center}
-/* feature list */
-.feats{margin-top:38px;border-top:1px solid var(--line)}
-.feat{padding:15px 0;border-bottom:1px solid var(--line)}
-.feat .k{font-family:var(--mono);font-size:11px;color:var(--faint);display:block;margin-bottom:3px}
-.feat h3{display:inline;font-size:15px;font-weight:700;margin-right:10px}
-.feat p{display:inline;font-size:13.5px;color:var(--sub)}
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:44px}
-/* price */
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.plan{padding:30px 26px;border-left:1px solid var(--line);position:relative;background:rgba(255,255,255,.035)}
-.plan:first-child{border-left:none}
-.plan.hot{background:rgba(232,163,61,.07)}
-.plan .tag{position:absolute;top:0;right:0;font-family:var(--mono);font-size:10.5px;background:var(--amber);color:#fff;padding:3px 10px;border-radius:0 0 0 8px}
-.plan h3{font-size:15px;font-weight:700}
-.plan em{display:block;font-style:normal;font-family:var(--mono);font-size:32px;font-weight:700;margin:8px 0 2px}
-.plan em small{font-size:12px;color:var(--faint);font-weight:400}
-.plan ul{list-style:none;margin:14px 0 0}
-.plan li{font-size:13px;color:var(--sub);padding:5px 0;border-top:1px dashed var(--line)}
-.plan li::before{content:"—";color:var(--amber);margin-right:8px}
-.pnote{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:16px}
+.scr .hd b{font-size:15px;color:#e6ecf7}
+.scr .hd span{font-family:var(--mono);font-size:10px;color:var(--acc2)}
+.scr .search{height:32px;border-radius:10px;background:#101a30;border:1px solid #1c2946;font-size:11.5px;color:#5f739a;display:flex;align-items:center;padding:0 11px}
+.pcard{display:flex;gap:10px;align-items:center;background:#101a30;border:1px solid #1c2946;border-radius:12px;padding:10px}
+.pcard .av{width:36px;height:36px;border-radius:50%;flex:none;background:var(--grad)}
+.pcard .av.v2{background:linear-gradient(120deg,#f472b6,#818cf8)}
+.pcard .av.v3{background:linear-gradient(120deg,#22d3ee,#6d7cff)}
+.pcard .nm{font-size:12.5px;font-weight:700;color:#e6ecf7}
+.pcard .tg{font-size:10px;color:#5f739a}
+.pcard .pr{margin-left:auto;font-family:var(--mono);font-size:12.5px;font-weight:800;color:#22d3ee}
+.tabbar{margin-top:auto;display:flex;justify-content:space-around;padding:9px 0 5px;border-top:1px solid #1c2946;font-size:10px;color:#5f739a}
+.tabbar b{color:var(--acc2)}
+.note{font-family:var(--mono);font-size:11px;color:#5f739a;margin-top:14px;text-align:center}
+.feats{display:grid;gap:14px}
+.feats .card{display:flex;gap:14px;align-items:flex-start;padding:18px 20px}
+.feats h3{margin:0 0 4px;font-size:16px}
+/* flow / price */
+.steps .step::before{content:attr(data-n);font-family:var(--mono);font-size:13px;color:var(--acc2);letter-spacing:2px}
+.steps h3{margin:6px 0 4px}
+.steps p{color:var(--sub);font-size:14px}
+.plan{position:relative;text-align:center}
+.plan .tag{position:absolute;top:-11px;right:16px;background:var(--grad);color:#081018;font-size:12px;font-weight:800;padding:3px 12px;border-radius:999px}
+.plan em{display:block;font-style:normal;font-family:var(--mono);font-size:34px;font-weight:800;margin:10px 0 14px;background:var(--grad2);-webkit-background-clip:text;background-clip:text;color:transparent}
+.plan ul{list-style:none;text-align:left;margin-bottom:20px;flex:1}
+.plan li{font-size:13.5px;color:var(--sub);padding:6px 0;border-bottom:1px dashed var(--line)}
+.plan li::before{content:"✓";color:var(--acc2);margin-right:9px;font-weight:800}
+.plan .btn{width:100%;text-align:center;padding:12px 0}
+.plan.hot{border-color:rgba(109,124,255,.6);box-shadow:0 0 46px rgba(109,124,255,.16)}
+.pnote{font-family:var(--mono);font-size:12px;color:var(--sub);margin-top:18px;text-align:center}
 /* faq */
-details{border-bottom:1px solid var(--line);padding:16px 2px}
-details:first-of-type{border-top:1px solid var(--line)}
-summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details{background:rgba(14,21,38,.82);border:1px solid var(--line);border-radius:14px;padding:17px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:var(--mono);color:var(--amber);font-size:18px}
+summary::after{content:"+";font-family:var(--mono);color:var(--acc2);font-size:18px}
 details[open] summary::after{content:"−"}
-details p{color:var(--sub);font-size:14px;margin-top:10px;max-width:640px}
+details p{color:var(--sub);font-size:14px;margin-top:10px;max-width:660px}
 /* contact */
-.contact{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.035);padding:54px 30px;text-align:center}
-.contact h2{margin-bottom:4px}
-.contact .big{display:inline-block;font-family:var(--mono);font-size:clamp(24px,5vw,38px);font-weight:700;letter-spacing:.02em;margin:20px 0 6px;color:var(--ink)}
-.contact .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:10px;vertical-align:middle}
+.contact{text-align:center;background:
+ radial-gradient(50% 60% at 50% 0%,rgba(109,124,255,.14),transparent 70%),rgba(14,21,38,.82);
+ border:1px solid var(--line);border-radius:20px;padding:54px 24px}
+.contact h2{margin-bottom:6px}
 .contact p{color:var(--sub);font-size:14px}
-.fab{position:fixed;right:18px;bottom:20px;z-index:60;background:var(--amber);color:#181405;font-size:13.5px;font-weight:700;padding:11px 20px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--faint);font-family:var(--mono);font-size:12px}
+.wx{display:inline-flex;align-items:center;gap:12px;background:#0b1226;border:1px solid rgba(45,212,191,.45);border-radius:14px;padding:16px 32px;margin:22px 0 10px}
+.wx b{font-family:var(--mono);font-size:28px;letter-spacing:1px;color:var(--acc2)}
+.fab{position:fixed;right:18px;bottom:20px;z-index:60;background:var(--grad);color:#081018;font-weight:800;padding:13px 22px;border-radius:999px;box-shadow:0 10px 30px rgba(45,212,191,.3);font-size:15px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:#57688a;font-family:var(--mono);font-size:12px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-@media(max-width:820px){
+@media(max-width:860px){
+ .g3,.g2{grid-template-columns:1fr}
+ .show{gap:40px}
+ .hero{padding:72px 0 56px}
  .stats{grid-template-columns:repeat(2,1fr)}
- .pain,.steps,.plans{grid-template-columns:1fr}
- .stat{border-left:none;border-top:1px solid var(--line);padding-left:0}
- .stat:nth-child(-n+2){border-top:none}
- .stat:nth-child(even){border-left:1px solid var(--line);padding-left:18px}
- .show{grid-template-columns:1fr;gap:40px}
- .plan{border-left:none;border-top:1px solid var(--line)}
- .plan:first-child{border-top:none}
- section{padding:64px 0}
- .hero{padding:72px 0 64px}
+ section{padding:56px 0}
+ .btns .btn{padding:13px 24px}
 }
 </style>
 </head>
+
 <body>
+<svg class="bgfix" viewBox="0 0 1440 810" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="rgba(56,189,248,.055)" stroke-width="1"/>
+    </pattern>
+    <pattern id="ticks" width="140" height="140" patternUnits="userSpaceOnUse">
+      <path d="M70 64v12M64 70h12" stroke="rgba(56,189,248,.13)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(109,124,255,.13)"/>
+      <stop offset="100%" stop-color="rgba(109,124,255,0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="810" fill="url(#grid)"/>
+  <rect width="1440" height="810" fill="url(#ticks)"/>
+  <circle cx="820" cy="330" r="330" fill="url(#glow)"/>
+  <g fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1">
+    <path d="M-40 700 C 180 590, 340 740, 580 640 S 920 480, 1140 590 S 1360 690, 1520 600"/>
+    <path d="M-40 734 C 190 628, 350 772, 590 674 S 930 516, 1150 622 S 1370 720, 1520 634"/>
+    <path d="M-60 300 C 140 380, 260 250, 470 320 S 760 410, 940 330 S 1220 260, 1500 340"/>
+  </g>
+  <g fill="none" stroke="rgba(56,189,248,.26)" stroke-width="1">
+    <circle cx="820" cy="330" r="118"/>
+    <circle cx="820" cy="330" r="74"/>
+    <path d="M820 190v44M820 426v44M680 330h44M916 330h44"/>
+  </g>
+  <g fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1">
+    <rect x="330" y="210" width="10" height="10" transform="rotate(45 335 215)"/>
+    <rect x="1120" y="560" width="10" height="10" transform="rotate(45 1125 565)"/>
+    <path d="M420 470v20M410 480h20"/>
+  </g>
+  <g font-family="ui-monospace,Consolas,monospace" font-size="11" letter-spacing="2" fill="rgba(255,255,255,.22)">
+    <text x="24" y="788">GRID 38.92N 121.36E // SECTOR 04 // LZ-BRAVO</text>
+    <text x="1416" y="40" text-anchor="end">ALT 240M · WIND 3M/S</text>
+    <text x="820" y="336" text-anchor="middle" fill="rgba(56,189,248,.55)">OBJ-01</text>
+  </g>
+</svg>
 
 <nav>
   <div class="wrap">
-    <div class="wm">接单系统<i>_studio</i></div>
-    <a class="ct" href="#contact">合作:wo812570284</a>
+    <div class="logo">接单系统<b>_studio</b></div>
+    <a class="cta" href="#contact">咨询报价</a>
   </div>
 </nav>
 
 <header class="hero">
-  <svg class="bg" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs>
-      <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
-        <path d="M28 0H0V28" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-      </pattern>
-      <pattern id="ticks" width="140" height="140" patternUnits="userSpaceOnUse">
-        <path d="M70 64v12M64 70h12" stroke="rgba(255,255,255,.14)" stroke-width="1"/>
-      </pattern>
-      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stop-color="rgba(232,163,61,.14)"/>
-        <stop offset="100%" stop-color="rgba(232,163,61,0)"/>
-      </radialGradient>
-    </defs>
-    <rect width="1440" height="640" fill="url(#grid)"/>
-    <rect width="1440" height="640" fill="url(#ticks)"/>
-    <circle cx="820" cy="170" r="300" fill="url(#glow)"/>
-    <g fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1">
-      <path d="M-40 540 C 180 430, 340 580, 580 480 S 920 320, 1140 430 S 1360 530, 1520 440"/>
-      <path d="M-40 574 C 190 468, 350 612, 590 514 S 930 356, 1150 462 S 1370 560, 1520 474"/>
-      <path d="M-40 608 C 200 506, 360 644, 600 548 S 940 392, 1160 494 S 1380 590, 1520 508"/>
-      <path d="M-60 140 C 140 220, 260 90, 470 160 S 760 250, 940 170"/>
-      <path d="M-60 180 C 150 256, 270 128, 480 196 S 770 284, 950 206"/>
-    </g>
-    <g fill="none" stroke="rgba(232,163,61,.24)" stroke-width="1">
-      <circle cx="820" cy="200" r="118"/>
-      <circle cx="820" cy="200" r="74"/>
-      <path d="M820 60v44M820 296v44M680 200h44M916 200h44"/>
-    </g>
-    <g fill="none" stroke="rgba(255,255,255,.2)" stroke-width="1">
-      <rect x="330" y="210" width="10" height="10" transform="rotate(45 335 215)"/>
-      <rect x="760" y="120" width="10" height="10" transform="rotate(45 765 125)"/>
-      <path d="M520 330v20M510 340h20"/>
-    </g>
-    <g font-family="ui-monospace,Consolas,monospace" font-size="11" letter-spacing="2" fill="rgba(255,255,255,.24)">
-      <text x="24" y="618">GRID 38.92N 121.36E // SECTOR 04 // LZ-BRAVO</text>
-      <text x="1416" y="40" text-anchor="end">ALT 240M · WIND 3M/S</text>
-      <text x="820" y="206" text-anchor="middle" fill="rgba(232,163,61,.5)">OBJ-01</text>
-    </g>
-  </svg>
   <div class="wrap">
-    <span class="label">01 · 面向游戏陪玩 / 护航 / 代练工作室</span>
-    <h1>别再用微信群派单了。</h1>
-    <p class="lead">一套接单小程序:老板下单、打手抢单、后台对账,各干各的。买断制,贴你的牌,交易流水零抽成。</p>
+    <span class="kicker">2026 · 三角洲护航大热门 · 工作室接单必备</span>
+    <h1>别再用微信群派单了。<br>你的工作室,该有<b>自己的接单小程序</b></h1>
+    <p class="lead">一套给陪玩 / 护航 / 代练工作室的订单交易系统。买断制,贴你的牌,交易流水零抽成。老板端 + 打手端 + 管理后台,一套齐活。</p>
     <div class="btns">
-      <a class="btn amber" href="#contact">咨询报价</a>
-      <a class="btn ghostw" href="#feats">先看功能</a>
+      <a class="btn primary" href="#contact">获取报价与演示</a>
+      <a class="btn ghost" href="#price">查看版本价格</a>
     </div>
     <div class="chips">
       <span class="chip">三角洲行动</span><span class="chip">暗区突围</span><span class="chip">王者荣耀</span><span class="chip">无畏契约</span><span class="chip">CS2</span><span class="chip">和平精英</span><span class="chip">英雄联盟</span><span class="chip">游戏随心配</span>
     </div>
     <div class="stats">
-      <div class="stat"><b>¥140亿</b><span>2021 年陪玩市场规模</span></div>
-      <div class="stat"><b>+32%</b><span>行业年增速(2024–2030)</span></div>
-      <div class="stat"><b>0</b><span>交易流水抽成,买断制</span></div>
+      <div class="stat"><b>¥140亿+</b><span>游戏陪玩市场规模</span></div>
+      <div class="stat"><b>32%+</b><span>行业年增速</span></div>
+      <div class="stat"><b>297万</b><span>头部平台认证陪练</span></div>
       <div class="stat"><b>1天</b><span>贴牌构建 + 提审交付</span></div>
     </div>
   </div>
@@ -201,12 +200,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 <main>
 <section id="pain">
   <div class="wrap">
-    <span class="label">02 · 现状</span>
-    <h2>管理一个工作室,你现在靠什么?</h2>
-    <div class="pain">
-      <div><div class="n">01</div><h3>群消息就是你的排班表</h3><p>每晚 11 点还在群里问「谁在线,这单谁来」。打手状态、订单归属,全在滚动消息里。</p></div>
-      <div><div class="n">02</div><h3>对账靠翻聊天记录</h3><p>谁的款没收、给打手结了多少、这单退没退——月底考古三天,还未必对得上。</p></div>
-      <div><div class="n">03</div><h3>最好的打手,带客户飞了</h3><p>你喂的单养熟了人,人加了客户微信。你没抓手,只能看着。</p></div>
+    <span class="kicker">是不是你</span>
+    <h2>工作室老板的三个深夜崩溃瞬间</h2>
+    <p class="lead">系统解决不了你所有的运营问题,但这三件事,它当场解决。</p>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-1L3 20l1-5.5a8.5 8.5 0 1 1 17-3z"/></svg></div><h3>派单全靠群里吼</h3><p>「谁在线?这单谁来?」——每天在群里@到深夜。上线接单大厅后,打手自己抢单,你只看结果。</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div><h3>月底对账翻聊天记录</h3><p>谁的款收了没收、给打手结了多少,全在聊天记录里考古。系统每笔订单自动记账,流水一屏拉清。</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>打手带着客户飞单</h3><p>余额充值锁客、阶梯分成留人、信誉等级绑人、违规扣佣立威——四道缰绳,让留在平台上更划算。</p></div>
     </div>
   </div>
 </section>
@@ -219,25 +219,24 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
           <div class="scr">
             <div class="hd"><b>接单大厅</b><span>● 在线 12</span></div>
             <div class="search">搜索游戏 / 段位 / 价格</div>
-            <div class="row"><div class="av">夜</div><div><div class="nm">夜雨*声</div><div class="tg">三角洲 · 绝密护航 · 双排</div></div><div class="pr">¥60/h</div></div>
-            <div class="row"><div class="av">北</div><div><div class="nm">北岛*白</div><div class="tg">王者荣耀 · 巅峰赛</div></div><div class="pr">¥35/局</div></div>
-            <div class="row"><div class="av">今</div><div><div class="nm">今天*睡觉</div><div class="tg">无畏契约 · 上分</div></div><div class="pr">¥40/h</div></div>
-            <div class="row"><div class="av">柠</div><div><div class="nm">柠*不酸</div><div class="tg">三角洲 · 机密清图</div></div><div class="pr">¥45/h</div></div>
-            <div class="tabs"><span><b>首页</b></span><span>大厅</span><span>订单</span><span>我的</span></div>
+            <div class="pcard"><div class="av"></div><div><div class="nm">夜雨*声</div><div class="tg">三角洲 · 绝密护航 · 双排</div></div><div class="pr">¥60/h</div></div>
+            <div class="pcard"><div class="av v2"></div><div><div class="nm">北岛*白</div><div class="tg">王者荣耀 · 巅峰赛</div></div><div class="pr">¥35/局</div></div>
+            <div class="pcard"><div class="av v3"></div><div><div class="nm">今天*睡觉</div><div class="tg">无畏契约 · 上分</div></div><div class="pr">¥40/h</div></div>
+            <div class="pcard"><div class="av"></div><div><div class="nm">柠*不酸</div><div class="tg">三角洲 · 机密清图</div></div><div class="pr">¥45/h</div></div>
+            <div class="tabbar"><span><b>首页</b></span><span>大厅</span><span>订单</span><span>我的</span></div>
           </div>
         </div>
         <div class="note">↑ 客户端示意,部署后是客户的品牌与配置</div>
       </div>
       <div>
-        <span class="label">03 · 产品</span>
-        <h2>一个小程序,三种人各得其所</h2>
-        <p class="lead" style="margin-top:10px">老板下单付款,打手上线抢单,你在网页后台看流水。联系方式在支付后才互相可见,聊天走微信,系统只管交易。</p>
-        <div class="feats">
-          <div class="feat"><span class="k">01 / 下单</span><h3>多规格价目</h3><p>按小时、按局、按段位、结果单、保底套餐,护航价目随意配。</p></div>
-          <div class="feat"><span class="k">02 / 收款</span><h3>微信支付 + 余额</h3><p>钱直接进你自己的商户号。老客充值余额,复购锁住。</p></div>
-          <div class="feat"><span class="k">03 / 打手</span><h3>入驻与接单大厅</h3><p>段位战绩提交资质,后台审核上架;在线抢单,提现自助申请。</p></div>
-          <div class="feat"><span class="k">04 / 留人</span><h3>阶梯分成 + 信誉</h3><p>月单量越高抽成越低;评价等级挂在账号上,飞单封号扣佣。</p></div>
-          <div class="feat"><span class="k">05 / 对账</span><h3>数据看板</h3><p>日流水、佣金排行、退款率。月底对账,三小时变三分钟。</p></div>
+        <span class="kicker">产品一览</span>
+        <h2>一个小程序,两种身份</h2>
+        <p class="lead">老板下单、打手接单,同一小程序身份切换;你的品牌贴在每一个页面上。</p>
+        <div class="feats" style="margin-top:22px">
+          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.6 11.5a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20 8H6"/></svg></div><div><h3>多规格商品下单</h3><p>按小时 / 按局 / 按段位 / 结果单 / 保底套餐,护航价目随意配。</p></div></div>
+          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div><div><h3>微信支付 + 余额</h3><p>钱直接进你自己的商户号。老客户充值余额,复购锁住。</p></div></div>
+          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><div><h3>打手接单大厅</h3><p>资质提交、后台审核上架;在线抢单、收入提现,打手自助完成。</p></div></div>
+          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div><h3>数据看板</h3><p>日流水、佣金排行、退款率。月底对账,三小时变三分钟。</p></div></div>
         </div>
       </div>
     </div>
@@ -246,45 +245,48 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
 <section id="flow">
   <div class="wrap">
-    <span class="label">04 · 交付</span>
+    <span class="kicker">交付流程</span>
     <h2>三步上线,最快一周</h2>
-    <div class="steps">
-      <div><div class="n" style="font-family:var(--mono);font-size:12px;color:var(--faint)">STEP 1</div><h3 style="font-size:16px;margin:8px 0 4px">定版本</h3><p style="color:var(--sub);font-size:14px">微信沟通功能与价格,确定基础 / 标准 / 旗舰。</p></div>
-      <div><div class="n" style="font-family:var(--mono);font-size:12px;color:var(--faint)">STEP 2</div><h3 style="font-size:16px;margin:8px 0 4px">贴牌构建</h3><p style="color:var(--sub);font-size:14px">发品牌名、logo、价目表,构建你的专属小程序并提审。</p></div>
-      <div><div class="n" style="font-family:var(--mono);font-size:12px;color:var(--faint)">STEP 3</div><h3 style="font-size:16px;margin:8px 0 4px">上线运营</h3><p style="color:var(--sub);font-size:14px">过审开张。后台教程、年审协助、售后,都有人管。</p></div>
+    <div class="grid g3 steps" style="margin-top:26px">
+      <div class="card step" data-n="STEP 1"><h3>定版本</h3><p>微信沟通功能与价格,确定基础 / 标准 / 旗舰。</p></div>
+      <div class="card step" data-n="STEP 2"><h3>贴牌构建</h3><p>发品牌名、logo、价目表,构建你的专属小程序并提交审核。</p></div>
+      <div class="card step" data-n="STEP 3"><h3>上线运营</h3><p>过审开张。后台教程、年审协助、售后,都有人管。</p></div>
     </div>
   </div>
 </section>
 
 <section id="price">
   <div class="wrap">
-    <span class="label">05 · 价格</span>
-    <h2>买断,不抽成</h2>
-    <p class="lead">一次付费,永久使用权。次年起托管服务费 800–1,500 元/年。</p>
-    <div class="plans">
-      <div class="plan">
+    <span class="kicker">一次买断 · 无抽成</span>
+    <h2>版本与价格</h2>
+    <p class="lead">买断制,交易流水 0 抽成;次年起托管服务费 800–1,500 元/年。</p>
+    <div class="grid g3" style="margin-top:30px">
+      <div class="card plan">
         <h3>基础版</h3><em>¥2,980</em>
         <ul><li>下单全流程(多规格)</li><li>微信支付 + 余额</li><li>订单管理与退款仲裁</li><li>贴牌部署 + 首年托管</li></ul>
+        <a class="btn ghost" href="#contact">咨询</a>
       </div>
-      <div class="plan hot">
+      <div class="card plan hot">
         <span class="tag">多数人选这个</span>
         <h3>标准版</h3><em>¥5,880</em>
         <ul><li>基础版全部功能</li><li>打手入驻 + 接单大厅</li><li>阶梯分成 + 信誉等级</li><li>数据看板 + 评价体系</li></ul>
+        <a class="btn primary" href="#contact">咨询</a>
       </div>
-      <div class="plan">
+      <div class="card plan">
         <h3>旗舰版</h3><em>¥9,880</em>
         <ul><li>标准版全部功能</li><li>组局 / 车队拼单</li><li>分销裂变 + 优惠券</li><li>优先定制额度</li></ul>
+        <a class="btn ghost" href="#contact">咨询</a>
       </div>
     </div>
-    <div class="pnote">数据完全自持的私有部署方案 ¥15,000 起。功能加购 800–5,000 元/项。</div>
+    <div class="pnote">另有数据完全自持的「私有部署」方案 ¥15,000 起,功能加购 800–5,000 元/项,详情咨询。</div>
   </div>
 </section>
 
 <section id="faq">
   <div class="wrap">
-    <span class="label">06 · 常见问题</span>
+    <span class="kicker">常见问题</span>
     <h2>问得最多的五个</h2>
-    <div style="margin-top:28px">
+    <div style="margin-top:24px">
       <details open><summary>需要什么资质?</summary><p>营业执照,个体工商户或公司都行——微信支付必须有商户主体。还没执照的先去办,3–5 个工作日,不影响先谈。</p></details>
       <details><summary>打手加了客户微信,飞单怎么办?</summary><p>先说实话:没有系统防得住 100% 飞单。能做的是让留下更划算——余额充值锁客、阶梯分成多劳多得、信誉等级是打手的接单简历、违规封号扣未结佣金。实际经营里,靠平台喂单的打手,飞单动机比你想的小。</p></details>
       <details><summary>数据安全吗?</summary><p>数据在你的独立空间,可随时导出。买断制下你有使用权,不是租个账号;介意的话还有数据完全自持的私有部署方案。</p></details>
@@ -294,20 +296,20 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   </div>
 </section>
 
-<section id="contact" style="border-top:none">
+<section id="contact">
   <div class="wrap">
     <div class="contact">
-      <span class="label">07 · 合作</span>
+      <span class="kicker">限时</span>
       <h2>首批 10 家,半价换案例</h2>
-      <p style="max-width:520px;margin:8px auto 0">半价签约,只需授权我们展示部署案例。名额做完即止。</p>
-      <div class="big"><span class="dot"></span>wo812570284</div>
-      <p>微信 / QQ 同号 · 添加备注「合作」· 可先看演示小程序</p>
+      <p style="max-width:560px;margin:8px auto 0">半价签约,只需授权我们展示部署案例。名额做完即止。</p>
+      <div class="wx">微信 / QQ:<b>wo812570284</b></div>
+      <p>添加备注「合作」 · 可先看演示小程序与完整功能清单</p>
     </div>
   </div>
 </section>
 </main>
 
-<a class="fab" href="#contact">合作咨询</a>
+<a class="fab" href="#contact">💬 合作咨询</a>
 
 <footer>
   <div class="wrap">
