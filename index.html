@@ -54,7 +54,7 @@ h1{font-size:clamp(34px,6vw,54px);line-height:1.16;font-weight:800;letter-spacin
 .pain h3{font-size:17px;margin:8px 0 6px;font-weight:700}
 .pain p{color:var(--sub);font-size:14px}
 /* show */
-.show{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.show{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px;align-items:start}
 /* phone mock — light */
 .phone{width:270px;height:552px;margin:0 auto;border-radius:34px;border:1px solid var(--line);background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.04);position:relative;overflow:hidden}
 .phone::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:84px;height:20px;background:#16181d;border-radius:999px;z-index:3;opacity:.9}
@@ -73,10 +73,10 @@ h1{font-size:clamp(34px,6vw,54px);line-height:1.16;font-weight:800;letter-spacin
 .note{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:14px;text-align:center}
 /* feature list */
 .feats{margin-top:38px;border-top:1px solid var(--line)}
-.feat{display:grid;grid-template-columns:150px 200px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.feat .k{font-family:var(--mono);font-size:12px;color:var(--faint)}
-.feat h3{font-size:15.5px;font-weight:700}
-.feat p{font-size:13.5px;color:var(--sub)}
+.feat{padding:15px 0;border-bottom:1px solid var(--line)}
+.feat .k{font-family:var(--mono);font-size:11px;color:var(--faint);display:block;margin-bottom:3px}
+.feat h3{display:inline;font-size:15px;font-weight:700;margin-right:10px}
+.feat p{display:inline;font-size:13.5px;color:var(--sub)}
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:44px}
 /* price */
@@ -110,11 +110,12 @@ details p{color:var(--sub);font-size:14px;margin-top:10px;max-width:640px}
 footer{border-top:1px solid var(--line);padding:24px 0;color:var(--faint);font-family:var(--mono);font-size:12px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media(max-width:820px){
- .stats,.pain,.steps,.plans{grid-template-columns:1fr}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .pain,.steps,.plans{grid-template-columns:1fr}
  .stat{border-left:none;border-top:1px solid var(--line);padding-left:0}
- .stat:first-child{border-top:none}
+ .stat:nth-child(-n+2){border-top:none}
+ .stat:nth-child(even){border-left:1px solid var(--line);padding-left:18px}
  .show{grid-template-columns:1fr;gap:40px}
- .feat{grid-template-columns:1fr;gap:4px}
  .plan{border-left:none;border-top:1px solid var(--line)}
  .plan:first-child{border-top:none}
  section{padding:64px 0}
