@@ -88,6 +88,63 @@ nav .cta{font-size:14px;background:var(--grad);color:#081018;font-weight:700;pad
 .feats{display:grid;gap:14px}
 .feats .card{display:flex;gap:14px;align-items:flex-start;padding:18px 20px}
 .feats h3{margin:0 0 4px;font-size:16px}
+/* showcase */
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:end;margin-top:40px}
+.phones .phone{width:100%;max-width:252px;height:492px;margin:0 auto}
+.ptag{font-family:var(--mono);font-size:12px;color:var(--acc2);letter-spacing:1px;text-align:center;margin-bottom:14px}
+.statusbar{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9px;color:#5f739a;padding:0 4px}
+.catrow{display:flex;gap:6px;flex-wrap:wrap}
+.cat{font-size:10px;color:var(--sub);border:1px solid #1c2946;border-radius:999px;padding:3px 10px;background:#101a30}
+.cat.on{color:#081018;background:var(--grad);border-color:transparent;font-weight:700}
+.seclbl{font-size:10.5px;color:#5f739a;letter-spacing:1px;margin:2px 0 -4px}
+.lvbadge{font-size:9px;color:#e8a33d;background:rgba(232,163,61,.12);border-radius:4px;padding:1px 5px;margin-left:auto}
+.spec{flex:1;text-align:center;font-size:10.5px;color:var(--sub);border:1px solid #1c2946;border-radius:8px;padding:7px 4px;background:#101a30}
+.spec b{display:block;font-size:11.5px;color:#e6ecf7}
+.spec.on{border-color:var(--acc2);color:var(--acc2)}
+.spec.on b{color:var(--acc2)}
+.orow2{display:flex;justify-content:space-between;font-size:11.5px;color:var(--sub);padding:7px 2px;border-bottom:1px dashed #1c2946}
+.orow2 b{color:#e6ecf7;font-family:var(--mono)}
+.paybtn{display:block;text-align:center;border-radius:10px;padding:10px 0;font-size:12.5px;font-weight:700;margin-top:9px}
+.pay-wx{background:#07c160;color:#fff}
+.pay-yue{border:1px solid #1c2946;color:var(--sub);background:#101a30}
+.grab{display:block;text-align:center;border-radius:10px;padding:10px 0;font-size:12.5px;font-weight:800;background:var(--grad);color:#081018;margin-top:10px}
+.ordercard{background:#101a30;border:1px solid #1c2946;border-radius:12px;padding:11px 12px}
+.ordercard .t{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.newb{font-size:9.5px;color:#081018;background:var(--grad);font-weight:800;border-radius:4px;padding:1px 7px}
+.cnt{font-family:var(--mono);font-size:10px;color:#f87171}
+.ordercard .g{font-size:12px;font-weight:700;color:#e6ecf7}
+.ordercard .d{font-size:10px;color:#5f739a;margin-top:2px}
+.taken{opacity:.45}
+.taken .grab{background:#1c2946;color:#5f739a}
+/* admin window */
+.adminwrap{margin-top:52px}
+.adminwrap .ptag{text-align:left}
+.win{border:1px solid var(--line);border-radius:12px;background:#0d1322;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.winbar{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;background:#0a0f1c;border-bottom:1px solid var(--line)}
+.wdot{width:10px;height:10px;border-radius:50%}
+.winurl{margin-left:10px;font-family:var(--mono);font-size:11px;color:#5f739a;background:#0a0f1e;border:1px solid #1c2946;border-radius:6px;padding:3px 12px}
+.winbody{display:grid;grid-template-columns:150px 1fr}
+.winside{border-right:1px solid var(--line);padding:12px 0}
+.winside div{font-size:12.5px;color:var(--sub);padding:9px 18px}
+.winside div.on{color:#fff;background:rgba(109,124,255,.14);border-right:2px solid var(--acc)}
+.winmain{padding:18px}
+.mini{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mini .m{background:#101a30;border:1px solid #1c2946;border-radius:10px;padding:12px 14px}
+.mini b{display:block;font-family:var(--mono);font-size:17px;color:#fff}
+.mini span{font-size:11px;color:var(--sub)}
+.chart{display:flex;gap:13px;align-items:flex-end;height:110px;margin:20px 2px 4px}
+.chart .bar{flex:1;border-radius:6px 6px 0 0;background:var(--grad);opacity:.9}
+.chart .bar.dim{background:#1c2946;opacity:1}
+.chartlbl{display:flex;gap:13px;margin:0 2px}
+.chartlbl span{flex:1;text-align:center;font-family:var(--mono);font-size:10px;color:var(--faint)}
+.orows{margin-top:16px;border-top:1px solid var(--line)}
+.orow{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:var(--sub);padding:9px 4px;border-bottom:1px dashed var(--line)}
+.orow b{color:#e6ecf7;font-family:var(--mono);font-weight:600}
+.badge{font-size:10.5px;padding:1px 9px;border-radius:999px;flex:none}
+.b-grn{color:#34d399;background:rgba(52,211,153,.12)}
+.b-blu{color:#818cf8;background:rgba(129,140,248,.14)}
+.b-red{color:#f87171;background:rgba(248,113,113,.12)}
+.g2x2{grid-template-columns:repeat(2,1fr)}
 /* flow / price */
 .steps .step::before{content:attr(data-n);font-family:var(--mono);font-size:13px;color:var(--acc2);letter-spacing:2px}
 .steps h3{margin:6px 0 4px}
@@ -120,12 +177,18 @@ details p{color:var(--sub);font-size:14px;margin-top:10px;max-width:660px}
 footer{border-top:1px solid var(--line);padding:24px 0;color:#57688a;font-family:var(--mono);font-size:12px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media(max-width:860px){
- .g3,.g2{grid-template-columns:1fr}
+ .g3,.g2,.g2x2{grid-template-columns:1fr}
  .show{gap:40px}
  .hero{padding:72px 0 56px}
  .stats{grid-template-columns:repeat(2,1fr)}
  section{padding:56px 0}
  .btns .btn{padding:13px 24px}
+ .phones{grid-template-columns:1fr;gap:38px}
+ .winbody{grid-template-columns:1fr}
+ .winside{display:flex;flex-wrap:wrap;gap:4px;border-right:none;border-bottom:1px solid var(--line);padding:8px 12px}
+ .winside div{padding:6px 12px}
+ .winside div.on{border-right:none;border-bottom:2px solid var(--acc)}
+ .mini{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -213,32 +276,122 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 
 <section id="show">
   <div class="wrap">
-    <div class="show">
+    <span class="kicker">产品一览</span>
+    <h2>三个端,一条完整交易链路</h2>
+    <p class="lead">老板小程序下单、打手小程序抢单、你在后台看流水。以下为界面示意,部署后全部换成客户的品牌与配置。</p>
+
+    <div class="phones">
       <div>
-        <div class="phone" role="img" aria-label="接单大厅界面示意">
+        <div class="ptag">老板端 · 找打手</div>
+        <div class="phone" role="img" aria-label="老板端首页示意">
           <div class="scr">
-            <div class="hd"><b>接单大厅</b><span>● 在线 12</span></div>
+            <div class="statusbar"><span>9:41</span><span>●●●</span></div>
+            <div class="hd"><b>发现</b><span style="font-size:11px;color:#8fa0bd">北京 ▾</span></div>
             <div class="search">搜索游戏 / 段位 / 价格</div>
-            <div class="pcard"><div class="av"></div><div><div class="nm">夜雨*声</div><div class="tg">三角洲 · 绝密护航 · 双排</div></div><div class="pr">¥60/h</div></div>
-            <div class="pcard"><div class="av v2"></div><div><div class="nm">北岛*白</div><div class="tg">王者荣耀 · 巅峰赛</div></div><div class="pr">¥35/局</div></div>
-            <div class="pcard"><div class="av v3"></div><div><div class="nm">今天*睡觉</div><div class="tg">无畏契约 · 上分</div></div><div class="pr">¥40/h</div></div>
-            <div class="pcard"><div class="av"></div><div><div class="nm">柠*不酸</div><div class="tg">三角洲 · 机密清图</div></div><div class="pr">¥45/h</div></div>
+            <div class="catrow"><span class="cat on">全部</span><span class="cat">三角洲</span><span class="cat">王者荣耀</span><span class="cat">无畏契约</span></div>
+            <div class="seclbl">热门打手</div>
+            <div class="pcard"><div class="av"></div><div><div class="nm">夜雨*声 <span class="lvbadge">绝密双排</span></div><div class="tg">三角洲 · 已接 328 单 · 好评 99%</div></div><div class="pr">¥60/h</div></div>
+            <div class="pcard"><div class="av v2"></div><div><div class="nm">北岛*白 <span class="lvbadge">巅峰</span></div><div class="tg">王者荣耀 · 已接 512 单</div></div><div class="pr">¥35/局</div></div>
+            <div class="pcard"><div class="av v3"></div><div><div class="nm">今天*睡觉</div><div class="tg">无畏契约 · 已接 96 单</div></div><div class="pr">¥40/h</div></div>
             <div class="tabbar"><span><b>首页</b></span><span>大厅</span><span>订单</span><span>我的</span></div>
           </div>
         </div>
-        <div class="note">↑ 客户端示意,部署后是客户的品牌与配置</div>
       </div>
       <div>
-        <span class="kicker">产品一览</span>
-        <h2>一个小程序,两种身份</h2>
-        <p class="lead">老板下单、打手接单,同一小程序身份切换;你的品牌贴在每一个页面上。</p>
-        <div class="feats" style="margin-top:22px">
-          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.6 11.5a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20 8H6"/></svg></div><div><h3>多规格商品下单</h3><p>按小时 / 按局 / 按段位 / 结果单 / 保底套餐,护航价目随意配。</p></div></div>
-          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div><div><h3>微信支付 + 余额</h3><p>钱直接进你自己的商户号。老客户充值余额,复购锁住。</p></div></div>
-          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><div><h3>打手接单大厅</h3><p>资质提交、后台审核上架;在线抢单、收入提现,打手自助完成。</p></div></div>
-          <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div><h3>数据看板</h3><p>日流水、佣金排行、退款率。月底对账,三小时变三分钟。</p></div></div>
+        <div class="ptag">老板端 · 下单支付</div>
+        <div class="phone" role="img" aria-label="下单支付示意">
+          <div class="scr">
+            <div class="statusbar"><span>9:42</span><span>●●●</span></div>
+            <div class="hd"><b>确认订单</b></div>
+            <div class="ordercard" style="display:flex;gap:10px;align-items:center">
+              <div class="av" style="width:52px;height:52px;border-radius:10px"></div>
+              <div><div class="g">三角洲 · 绝密护航</div><div class="d">夜雨*声 · 双排带飞</div></div>
+            </div>
+            <div class="seclbl">选择规格</div>
+            <div style="display:flex;gap:7px">
+              <div class="spec"><b>机密</b>¥40/h</div>
+              <div class="spec on"><b>绝密</b>¥60/h</div>
+              <div class="spec"><b>红护</b>¥90/h</div>
+            </div>
+            <div class="orow2"><span>时长</span><b>2 小时</b></div>
+            <div class="orow2"><span>新客优惠</span><b style="color:#34d399">-¥10</b></div>
+            <div class="orow2"><span>合计</span><b style="font-size:13px">¥110</b></div>
+            <div style="margin-top:auto">
+              <span class="paybtn pay-wx">微信支付 ¥110</span>
+              <span class="paybtn pay-yue">余额支付(余额 ¥56)</span>
+            </div>
+          </div>
         </div>
       </div>
+      <div>
+        <div class="ptag">打手端 · 接单大厅</div>
+        <div class="phone" role="img" aria-label="打手接单大厅示意">
+          <div class="scr">
+            <div class="statusbar"><span>9:43</span><span>●●●</span></div>
+            <div class="hd"><b>接单大厅</b><span>● 接单中</span></div>
+            <div class="ordercard" style="display:flex;justify-content:space-between;align-items:center;background:rgba(52,211,153,.08);border-color:rgba(52,211,153,.3)">
+              <span style="font-size:11px;color:#34d399">今日收入 · 2 单进行中</span><b style="font-family:var(--mono);font-size:13px;color:#34d399">¥486</b>
+            </div>
+            <div class="ordercard">
+              <div class="t"><span class="newb">新订单</span><span class="cnt">剩余 05:32</span></div>
+              <div class="g">三角洲 · 绝密护航 2h</div>
+              <div class="d">今晚 20:00 · 佣金 ¥78</div>
+              <span class="grab">立即抢单</span>
+            </div>
+            <div class="ordercard taken">
+              <div class="t"><span style="font-size:9.5px;color:#5f739a">已被抢</span><span class="cnt" style="color:#5f739a">03:12 前</span></div>
+              <div class="g">王者荣耀 · 巅峰赛 5 局</div>
+              <div class="d">佣金 ¥82</div>
+            </div>
+            <div class="tabbar"><span>首页</span><span><b>大厅</b></span><span>订单</span><span>我的</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="adminwrap">
+      <div class="ptag">管理后台 · 给工作室老板</div>
+      <div class="win" role="img" aria-label="管理后台数据看板示意">
+        <div class="winbar">
+          <span class="wdot" style="background:#f87171"></span><span class="wdot" style="background:#fbbf24"></span><span class="wdot" style="background:#34d399"></span>
+          <span class="winurl">admin.你的域名.com</span>
+        </div>
+        <div class="winbody">
+          <div class="winside">
+            <div class="on">数据看板</div><div>订单管理</div><div>打手管理</div><div>提现审核</div><div>违规处置</div><div>品牌配置</div>
+          </div>
+          <div class="winmain">
+            <div class="mini">
+              <div class="m"><b>¥3,286</b><span>今日流水</span></div>
+              <div class="m"><b>12</b><span>进行中订单</span></div>
+              <div class="m"><b>8</b><span>在线打手</span></div>
+              <div class="m"><b>2</b><span>待审提现</span></div>
+            </div>
+            <div class="chart">
+              <div class="bar" style="height:42%"></div>
+              <div class="bar" style="height:66%"></div>
+              <div class="bar dim" style="height:30%"></div>
+              <div class="bar" style="height:82%"></div>
+              <div class="bar" style="height:58%"></div>
+              <div class="bar" style="height:95%"></div>
+              <div class="bar dim" style="height:38%"></div>
+            </div>
+            <div class="chartlbl"><span>周一</span><span>周二</span><span>周三</span><span>周四</span><span>周五</span><span>周六</span><span>周日</span></div>
+            <div class="orows">
+              <div class="orow"><span>#20261021-06 · 三角洲绝密护航 2h · 夜雨*声</span><span><b>¥110</b> <span class="badge b-blu">进行中</span></span></div>
+              <div class="orow"><span>#20261021-05 · 王者巅峰赛 5 局 · 北岛*白</span><span><b>¥175</b> <span class="badge b-grn">已完成</span></span></div>
+              <div class="orow"><span>#20261021-04 · 无畏契约上分 · 今天*睡觉</span><span><b>¥80</b> <span class="badge b-red">退款中</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g2x2" style="margin-top:52px">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.6 11.5a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20 8H6"/></svg></div><div><h3>多规格商品下单</h3><p>按小时 / 按局 / 按段位 / 结果单 / 保底套餐,护航价目随意配。</p></div></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/></svg></div><div><h3>微信支付 + 余额</h3><p>钱直接进你自己的商户号。老客户充值余额,复购锁住。</p></div></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></div><div><h3>打手接单大厅</h3><p>资质提交、后台审核上架;在线抢单、收入提现,打手自助完成。</p></div></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><div><h3>数据看板</h3><p>日流水、佣金排行、退款率。月底对账,三小时变三分钟。</p></div></div>
     </div>
   </div>
 </section>
